@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Checkboxes from './components/Checkboxes';
-import { data,data1, listCheckboxesRating, listCheckboxesGenre } from './components/data';
+import { data,data1, listCheckboxesRating } from './components/data';
 var PERMITTED_DOMAIN = "http://localhost:3000";
 
 window.addEventListener('message', function(event) {
