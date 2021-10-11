@@ -15,6 +15,7 @@ const App = () => {
   
           console.log("eventeventevent",event)
           if (event.data) {
+            console.log("eventeventeventddd",event)
               localStorage.setItem("localstorage", event.data);
           } else {
               localStorage.removeItem("localstorage");
