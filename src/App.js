@@ -9,9 +9,9 @@ window.addEventListener('message', function(event) {
         // var msgKey = Object.keys(msg)[0];
         console.log("eventeventevent",event)
         if (event.data) {
-            localStorage.setItem("localstorage", event.data);
+          sessionStorage.setItem("localstorage", event.data);
         } else {
-            localStorage.removeItem("localstorage");
+          sessionStorage.removeItem("localstorage");
         }
     }
 });
