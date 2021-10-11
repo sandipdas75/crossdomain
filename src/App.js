@@ -1,22 +1,29 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import Checkboxes from './components/Checkboxes';
 import { data,data1, listCheckboxesRating } from './components/data';
-var PERMITTED_DOMAIN = "http://localhost:3000";
+let PERMITTED_DOMAIN = "http://localhost:3000";
 
-window.addEventListener('message', function(event) {
-    if (event.origin === PERMITTED_DOMAIN) {
-        //var msg = JSON.parse(event.data);
-        // var msgKey = Object.keys(msg)[0];
-        console.log("eventeventevent",event)
-        if (event.data) {
-          sessionStorage.setItem("localstorage", event.data);
-        } else {
-          sessionStorage.removeItem("localstorage");
-        }
-    }
-});
+
 
 const App = () => {
+
+  useEffect(() => {
+    window.addEventListener('message', function(event) {
+      if (event.origin === PERMITTED_DOMAIN) {
+          //var msg = JSON.parse(event.data);
+          // var msgKey = Object.keys(msg)[0];
+  
+          console.log("eventeventevent",event)
+          if (event.data) {
+              localStorage.setItem("localstorage", event.data);
+          } else {
+              localStorage.removeItem("localstorage");
+          }
+      }
+  });
+
+}, []);
+
   console.log('data1',data1)
   console.log("localstorage",JSON.stringify(localStorage.getItem('localstorage')))
   const [movies, setMovies] = useState(data);
