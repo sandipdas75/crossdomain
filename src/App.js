@@ -1,7 +1,7 @@
 import { useState,useEffect } from 'react';
 import Checkboxes from './components/Checkboxes';
 import { data,data1, listCheckboxesRating } from './components/data';
-let PERMITTED_DOMAIN = "http://192.168.1.2/";
+let PERMITTED_DOMAIN = "http://localhost:3000/";
 
 
 
